@@ -1,0 +1,139 @@
+.heroSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  padding: clamp(2rem, 5vw, 5rem);
+  gap: 2rem;
+}
+
+.heroContent {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.heroDescription {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #ccc;
+  max-width: 50ch;
+}
+
+.hireMeButton {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 0.8rem 1.5rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  -webkit-transition: background-color 0.3s ease, transform 0.2s ease;
+  -moz-transition: background-color 0.3s ease, transform 0.2s ease;
+  -ms-transition: background-color 0.3s ease, transform 0.2s ease;
+  -o-transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hireMeButton:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+}
+
+.socialIcons {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.socialIcon {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -ms-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+}
+
+.socialIcon:hover {
+  color: #007bff; /* Example hover color */
+}
+
+.heroImageContainer {
+  /* flex: 1; */
+  position: relative;
+  width: clamp(250px, 40vw, 500px);
+  height: clamp(250px, 40vw, 500px);
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-top: 20px;
+}
+
+
+/* Responsive Styles for tablets and smaller devices */
+@media (max-width: 768px) {
+  .heroSection {
+    flex-direction: column;
+    text-align: left;
+    padding-top: 2rem;
+    margin-top: 4rem;
+  }
+
+  .heroContent {
+    max-width: 100%;
+    margin-top: 0.5rem; /* Add margin-top to separate content from image */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 1.5rem;
+  }
+
+  .heroImageContainer {
+    width: 150px;
+    height: 150px;
+    margin-inline: auto;
+    margin-top: 20px;
+    flex:none  ;
+  }
+
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+
+  .heroDescription {
+    font-size: 0.95rem;
+  }
+
+  .hireMeButton {
+    padding: 0.7rem 1.2rem;
+  }
+}
