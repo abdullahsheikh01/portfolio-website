@@ -1,6 +1,5 @@
 'use client';
-
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import styles from './styles/Navbar.module.css';
 
 export const Navbar = () => {
@@ -14,7 +13,9 @@ export const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles['navbar-container']}>
         <div className={styles['navbar-left']}>
-          <button className={styles['resume-button']}>Download Resume</button>
+          <a href="/Abdullah_Shaikh_Resume.pdf" download="Abdullah_Shaikh_Resume.pdf">
+            <button className={styles['resume-button']}>Download Resume</button>
+          </a>
         </div>
         <div className={styles['navbar-right']}>
           <div className={styles.hamburger} onClick={toggleMenu}>

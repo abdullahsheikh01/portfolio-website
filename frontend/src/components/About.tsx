@@ -1,30 +1,31 @@
 'use client';
-import React from 'react';
 import styles from './styles/About.module.css';
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaBootstrap, FaGitAlt, FaFigma} from 'react-icons/fa';
-import { SiTailwindcss, SiAdobeillustrator, SiAdobephotoshop, SiAdobexd } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact,FaGitAlt, FaFigma} from 'react-icons/fa';
+import { SiTailwindcss} from 'react-icons/si';
 
 const skills = [
   { icon: <FaHtml5 />, name: 'HTML' },
   { icon: <FaCss3Alt />, name: 'CSS' },
   { icon: <FaJsSquare />, name: 'JavaScript' },
-  { icon: <FaReact />, name: 'React' },
+  { icon: <FaReact/>, name: 'Next.js' },
   { icon: <SiTailwindcss />, name: 'Tailwind CSS' },
-  { icon: <FaBootstrap />, name: 'Bootstrap' },
   { icon: <FaGitAlt />, name: 'Git' },
   { icon: <FaFigma />, name: 'Figma' },
-  { icon: <SiAdobexd />, name: 'Adobe XD' },
-  { icon: <SiAdobeillustrator />, name: 'Illustrator' },
-  { icon: <SiAdobephotoshop />, name: 'Photoshop' },
 ];
 
 const About = () => {
   return (
-    <section className={styles.aboutSection}>
+    <section id="about" className={styles.aboutSection}>
       <div className={styles.aboutContent}>
         <h2 className={styles.aboutTitle}>About Me</h2>
         <p className={styles.aboutText}>
-          I'm Mokete Elias Tjantabane, a passionate Frontend Developer & UI/UX Designer with expertise in React, JavaScript, and Tailwind CSS, dedicated to building responsive and user-friendly applications. With a Diploma in Information Technology from Central University of Technology, Free State, I have experience in Web Development, UI/UX Design, and IT Support. Having worked as an IT Officer at Softstart BTI (Botshabelo Digital Hub), where I mentored interns and assisted startups, I enjoy transforming ideas into digital experiences, whether through intuitive UI designs in Figma or developing scalable web applications. Currently, I'm expanding my knowledge in React Native and working on projects that merge creativity with functionality to solve real-world problems.
+         I'm Abdullah Shaikh, a passionate Agentic AI and Frontend Web Developer based in Karachi. With
+  a strong foundation in Python and the OpenAI Agents SDK, I specialize in creating intelligent,
+  next-generation web applications. Currently advancing my skills in Cloud Applied Agentic AI
+  Engineering through the Governor Sindh Initiative, I am dedicated to building innovative digital
+  solutions that seamlessly blend cutting-edge technology with user-centric design. My goal is to 
+  develop impactful applications that not only meet today’s demands but also shape the future of  
+  the web.
         </p>
       </div>
 
@@ -32,19 +33,16 @@ const About = () => {
         <div className={styles.infoBox}>
           <h3 className={styles.infoTitle}>Education</h3>
           <ul className={styles.infoList}>
-            <li>Diploma in Information Technology</li>
-            <li>National Senior Certificate (Grade 12/Matric)</li>
+            <li>Cloud Applied Agentic AI Engineering(continuing) from <a href="https://www.governorsindh.com/" target='_blank' className={styles.link}>Governor Sindh Initiative for GenAI, Web3, and Metaverse</a></li>
+            <li>Matriculation from <a href="https://www.smiu.edu.pk/School" target='_blank' className={styles.link}>SMIU Model School</a></li>
           </ul>
         </div>
         <div className={styles.infoBox}>
-          <h3 className={styles.infoTitle}>Certifications & Courses</h3>
+          <h3 className={styles.infoTitle}>Skills Learnt!</h3>
           <ul className={styles.infoList}>
-            <li>Front-End Web Development Program (ALX Africa)</li>
-            <li>National Senior Certificate (freeCodeCamp)</li>
-            <li>Web Programming Foundations (LinkedIn)</li>
-            <li>HTML Essential Training (LinkedIn)</li>
-            <li>JavaScript Essentials (Cisco)</li>
-            <li>Professional Foundations (ALX Africa)</li>
+            <li>Front-End Web Development with headless CMS</li>
+            <li>Python Developer</li>
+            <li>Agentic AI Engineering with OpenAI Agents SDK</li>
           </ul>
         </div>
       </div>

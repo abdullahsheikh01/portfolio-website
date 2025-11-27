@@ -17,20 +17,14 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form data submitted:', formData);
-    alert('Thank you for your message!');
-    setFormData({ name: '', email: '', message: '' });
-  };
+
 
   return (
-    <section className={styles.contactSection}>
+    <section id="contact" className={styles.contactSection}>
       <div className={styles.contactContainer}>
         <h2 className={styles.title}>Contact Me</h2>
         <p className={styles.subtitle}>Have a project in mind? I'd love to hear from you.</p>
-        <form className={styles.contactForm} onSubmit={handleSubmit}>
+        <form className={styles.contactForm}  action="https://formspree.io/f/mnnqvnbl" method="post">
           <div className={styles.inputGroup}>
             <input
               type="text"

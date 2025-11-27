@@ -113,6 +113,10 @@
   color: #e0e0e0;
 }
 
+.link {
+  color:lightblue
+}
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
