@@ -80,6 +80,116 @@
   color: inherit;
 }
 
+.cardButton {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+.playOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding-left: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.projectCard:hover .playOverlay {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal {
+  position: relative;
+  width: min(90vw, 800px);
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.modalVideo {
+  display: block;
+  width: 100%;
+  max-height: 70vh;
+  background-color: #000000;
+}
+
+.modalActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+}
+
+.modalTitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.liveButton {
+  flex-shrink: 0;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.liveButton:hover {
+  background-color: #cccccc;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -129,5 +239,13 @@
   }
   .projectTitle {
     font-size: 1rem;
+  }
+  .modal {
+    width: 100%;
+  }
+  .modalActions {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
   }
 }
