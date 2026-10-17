@@ -43,8 +43,10 @@ const Hero = () => {
         <Image
           src={developerInfo.image.src}
           alt={developerInfo.image.alt}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
+          sizes="(max-width: 768px) 150px, (max-width: 1250px) 40vw, 500px"
+          priority
         />
       </div>
   

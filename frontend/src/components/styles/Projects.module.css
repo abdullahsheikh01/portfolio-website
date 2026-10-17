@@ -25,6 +25,10 @@
   overflow: hidden;
 }
 
+.projectsContainer + .projectsContainer {
+  margin-top: 3rem;
+}
+
 .subTitle {
   font-size: 1.8rem;
   font-weight: bold;
