@@ -28,6 +28,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://abdullah-shaikh-portfolio.vercel.app"),
   title: "Abdullah Shaikh - Agentic AI & Frontend Web Developer",
   description: "Portfolio of Abdullah Shaikh, a passionate Agentic AI and Frontend Web Developer based in Karachi, specializing in creating intelligent, next-generation web applications with Python, OpenAI Agents SDK, and Next.js.",
   keywords: "Agentic AI, Frontend Developer, OpenAI Agents SDK, Python Programmer, Generative AI, Next.js, Tailwind CSS, Web Developer, AI Engineer, Abdullah Shaikh",
@@ -38,20 +39,11 @@ export const metadata: Metadata = {
     description: "Portfolio of Abdullah Shaikh, a passionate Agentic AI and Frontend Web Developer.",
     url: "https://abdullah-shaikh-portfolio.vercel.app",
     type: "website",
-    images: [
-      {
-        url: "https://abdullah-shaikh-portfolio.vercel.app/images/developer.png",
-        width: 500,
-        height: 500,
-        alt: "Abdullah Shaikh",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Abdullah Shaikh - Agentic AI & Frontend Web Developer",
     description: "Portfolio of Abdullah Shaikh, a passionate Agentic AI and Frontend Web Developer.",
-    images: ["https://abdullah-shaikh-portfolio.vercel.app/images/developer.png"],
   },
 };
 
