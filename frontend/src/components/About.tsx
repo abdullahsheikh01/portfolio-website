@@ -1,69 +1,51 @@
-'use client';
+import { LuArrowUpRight, LuGraduationCap } from 'react-icons/lu';
+import { education } from '@/data/site';
+import SectionHeading from './ui/SectionHeading';
 import styles from './styles/About.module.css';
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact,FaGitAlt, FaFigma} from 'react-icons/fa';
-import { SiTailwindcss} from 'react-icons/si';
-
-const skills = [
-  { icon: <FaHtml5 />, name: 'HTML' },
-  { icon: <FaCss3Alt />, name: 'CSS' },
-  { icon: <FaJsSquare />, name: 'JavaScript' },
-  { icon: <FaReact/>, name: 'Next.js' },
-  { icon: <SiTailwindcss />, name: 'Tailwind CSS' },
-  { icon: <FaGitAlt />, name: 'Git' },
-  { icon: <FaFigma />, name: 'Figma' },
-];
 
 const About = () => {
   return (
-    <section id="about" className={styles.aboutSection}>
-      <div className={styles.aboutContent}>
-        <h2 className={styles.aboutTitle}>About Me</h2>
-        <p className={styles.aboutText}>
-         I'm Abdullah Shaikh, a passionate Agentic AI and Frontend Web Developer based in Karachi. With
-  a strong foundation in Python and the OpenAI Agents SDK, I specialize in creating intelligent,
-  next-generation web applications. Currently advancing my skills in Cloud Applied Agentic AI
-  Engineering through the Governor Sindh Initiative, I am dedicated to building innovative digital
-  solutions that seamlessly blend cutting-edge technology with user-centric design. My goal is to 
-  develop impactful applications that not only meet today’s demands but also shape the future of  
-  the web.
-        </p>
-      </div>
+    <section id="about" className="section" aria-labelledby="about-title">
+      <div className="site-container">
+        <SectionHeading id="about-title" index="03" eyebrow="About" title="Frontend craft, agentic thinking." />
 
-      <div className={styles.additionalInfo}>
-        <div className={styles.infoBox}>
-          <h3 className={styles.infoTitle}>Education</h3>
-          <ul className={styles.infoList}>
-            <li>Cloud Applied Agentic AI Engineering(continuing) from <a href="https://www.governorsindh.com/" target='_blank' className={styles.link}>Governor Sindh Initiative for GenAI, Web3, and Metaverse</a></li>
-            <li>Matriculation from <a href="https://www.smiu.edu.pk/School" target='_blank' className={styles.link}>SMIU Model School</a></li>
-          </ul>
-        </div>
-        <div className={styles.infoBox}>
-          <h3 className={styles.infoTitle}>Skills Learnt!</h3>
-          <ul className={styles.infoList}>
-            <li>Front-End Web Development with headless CMS</li>
-            <li>Python Developer</li>
-            <li>Agentic AI Engineering with OpenAI Agents SDK</li>
-          </ul>
-        </div>
-      </div>
-
-      <div className={styles.skillsSection}>
-        <h3 className={styles.skillsTitle}>Skills & Technologies</h3>
-        <div className={styles.skillsSlider}>
-          <div className={styles.skillsSlide}>
-            {skills.map((skill, index) => (
-              <div className={styles.skillItem} key={index}>
-                <div className={styles.skillIcon}>{skill.icon}</div>
-                <p className={styles.skillName}>{skill.name}</p>
-              </div>
-            ))}
-            {skills.map((skill, index) => (
-              <div className={styles.skillItem} key={`clone-${index}`}>
-                <div className={styles.skillIcon}>{skill.icon}</div>
-                <p className={styles.skillName}>{skill.name}</p>
-              </div>
-            ))}
+        <div className={styles.layout}>
+          <div className={`${styles.story} reveal`}>
+            <p className={styles.lead}>
+              I&apos;m Abdullah Shaikh, an Agentic AI and Frontend Web Developer based in Karachi.
+            </p>
+            <p>
+              On the frontend I work with Next.js, TypeScript, and Tailwind CSS, often backed by a headless CMS like
+              Sanity. On the AI side I build with Python and the OpenAI Agents SDK, and increasingly with coding agents
+              such as Claude Code and OpenCode — wiring them into watchers, loops, and MCP servers so they can take
+              on real, repetitive work.
+            </p>
+            <p>
+              What I care about most is keeping a human in the loop: agents that handle the routine and leave the final
+              decision to a person, behind interfaces that are clear enough to trust. The goal is simple — software that
+              looks good and solves real problems.
+            </p>
           </div>
+
+          <aside className={`${styles.education} reveal`} aria-labelledby="education-title">
+            <h3 id="education-title" className={styles.educationTitle}>
+              <LuGraduationCap aria-hidden="true" />
+              Education
+            </h3>
+            <ol className={styles.timeline}>
+              {education.map((item) => (
+                <li key={item.title} className={styles.timelineItem}>
+                  <p className={styles.status}>{item.status}</p>
+                  <p className={styles.course}>{item.title}</p>
+                  <a href={item.href} target="_blank" rel="noopener noreferrer" className={styles.institution}>
+                    {item.institution}
+                    <LuArrowUpRight aria-hidden="true" />
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </aside>
         </div>
       </div>
     </section>

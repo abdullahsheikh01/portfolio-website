@@ -1,66 +1,68 @@
 import Image from 'next/image';
-import {FaLinkedinIn, FaGithub } from 'react-icons/fa';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { LuArrowRight, LuMapPin } from 'react-icons/lu';
+import { developer } from '@/data/site';
+import Button from './ui/Button';
+import SocialLinks from './ui/SocialLinks';
 import styles from './styles/Hero.module.css';
-
-type DeveloperInfoType= {
-  name: string,
-  image:{
-    src:string,
-    alt:string,
-  }
-  heroparagraph:string,
-  sociallinks:{
-    x:string,
-    linkedin:string,
-    github:string
-  }
-}
-
-const developerInfo: DeveloperInfoType = {
-  name: "Abdullah Shaikh",
-  image: {
-    src:"/images/developer.png",
-    alt:"Abdullah Shaikh"
-  },
-  heroparagraph:"From a single line of code to a fully-realized digital and agentic ai experience, I thrive on the journey of\
-  creation. As a dedicated Frontend and Agentic AI Developer, I specialize in building intuitive and dynamic user\
-  interfaces and intelligent systems that can not only look great but also solve real-world problems. Dive into my work and\
-  let's explore how we can bring your vision to life.",
-  sociallinks:{
-    x:"https://x.com/abdullahsh6601",
-    linkedin:"https://www.linkedin.com/in/abdullah-shaikh-29699b302/",
-    github: "https://github.com/abdullahsheikh01"
-  }
-}
- 
 
 const Hero = () => {
   return (
-    <section id="home" className={styles.heroSection}>
-      <div className={styles.heroImageContainer}>
-        <Image
-          src={developerInfo.image.src}
-          alt={developerInfo.image.alt}
-          fill
-          style={{ objectFit: 'cover' }}
-          sizes="(max-width: 768px) 150px, (max-width: 1250px) 40vw, 500px"
-          priority
-        />
-      </div>
-  
-      <div className={styles.heroContent}>
-        <h1 className={styles.heroTitle}>{developerInfo.name}</h1>
-        <p className={styles.heroDescription}>
-          {developerInfo.heroparagraph}
-        </p>
-        <a href="https://www.linkedin.com/in/abdullah-shaikh-29699b302/" target='_blank'><button className={styles.hireMeButton}>Hire Me</button></a>
-        <div className={styles.socialIcons}>
-          <a href={developerInfo.sociallinks.x} className={styles.socialIcon} target='_blank'><FontAwesomeIcon icon={faXTwitter} height={25}/></a>
-          <a href={developerInfo.sociallinks.linkedin} className={styles.socialIcon} target='_blank'><FaLinkedinIn /></a>
-          <a href={developerInfo.sociallinks.github}  className={styles.socialIcon} target='_blank'><FaGithub/></a>
-          
+    <section id="home" className={styles.hero} aria-labelledby="hero-title">
+      <div className={styles.backdrop} aria-hidden="true" />
+
+      <div className={`site-container ${styles.inner}`}>
+        <div className={styles.content}>
+          <p className={styles.kicker}>
+            <span className={styles.kickerDot} aria-hidden="true" />
+            {developer.role}
+          </p>
+
+          <h1 id="hero-title" className={styles.title}>
+            I build interfaces people enjoy — and the <span className={styles.highlight}>AI agents</span> behind them.
+          </h1>
+
+          <p className={styles.intro}>
+            I&apos;m {developer.name}, a developer who designs responsive web experiences with Next.js and TypeScript,
+            and builds autonomous, human-in-the-loop agents with Python, the OpenAI Agents SDK, and Claude Code.
+          </p>
+
+          <div className={styles.actions}>
+            <Button href="#projects" icon={<LuArrowRight />}>
+              View projects
+            </Button>
+            <Button href="#contact" variant="secondary">
+              Get in touch
+            </Button>
+          </div>
+
+          <div className={styles.meta}>
+            <SocialLinks />
+            <p className={styles.location}>
+              <LuMapPin aria-hidden="true" />
+              {developer.location}
+            </p>
+          </div>
+        </div>
+
+        <div className={styles.visual}>
+          <span className={`${styles.stroke} ${styles.strokeA}`} aria-hidden="true" />
+          <span className={`${styles.stroke} ${styles.strokeS}`} aria-hidden="true" />
+          <figure className={styles.portraitCard}>
+            <div className={styles.portrait}>
+              <Image
+                src={developer.image.src}
+                alt={developer.image.alt}
+                fill
+                preload
+                sizes="(max-width: 860px) 320px, 420px"
+                className={styles.portraitImage}
+              />
+            </div>
+            <figcaption className={styles.caption}>
+              <span className={styles.captionName}>{developer.name}</span>
+              <span className={styles.captionRole}>~/karachi · building agents</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>

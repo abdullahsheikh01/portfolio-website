@@ -1,0 +1,214 @@
+/* ---------- Logo ---------- */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+
+.logoMark {
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px var(--border);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logoName {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.logoRole {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Buttons ---------- */
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  min-height: 48px;
+  padding: 0 var(--space-3);
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform 0.2s var(--ease-out),
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.buttonIcon {
+  display: inline-flex;
+  font-size: 1.05em;
+  transition: transform 0.2s var(--ease-out);
+}
+
+.button:hover .buttonIcon {
+  transform: translateX(2px);
+}
+
+.primary {
+  color: #fff;
+  background: var(--gradient-brand);
+  box-shadow: 0 8px 24px -12px rgba(40, 121, 255, 0.7);
+}
+
+.primary:hover {
+  box-shadow: 0 10px 32px -12px rgba(136, 59, 255, 0.75);
+  transform: translateY(-1px);
+}
+
+.secondary {
+  color: var(--text);
+  background: var(--surface);
+  border-color: var(--border-strong);
+}
+
+.secondary:hover {
+  background: var(--surface-hover);
+  border-color: var(--blue);
+}
+
+.ghost {
+  color: var(--text-muted);
+  background: transparent;
+  border-color: var(--border);
+}
+
+.ghost:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+  background: var(--surface-hover);
+}
+
+.small {
+  min-height: 40px;
+  padding: 0 var(--space-2);
+  font-size: 0.875rem;
+  border-radius: 10px;
+}
+
+/* ---------- Section heading ---------- */
+.sectionHeading {
+  max-width: 720px;
+  margin-bottom: var(--space-6);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--space-2);
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cyan);
+}
+
+.eyebrowIndex {
+  color: var(--text-muted);
+}
+
+/* Slanted bar echoes the diagonal strokes of the AS monogram */
+.eyebrowBar {
+  width: 32px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--gradient-brand);
+  transform: skewX(-35deg);
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 1.4rem + 2.4vw, 3rem);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.sectionDescription {
+  margin-top: var(--space-2);
+  font-size: 1.0625rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Tags ---------- */
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tag {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: rgba(16, 25, 54, 0.6);
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #c3cae3;
+}
+
+/* ---------- Social links ---------- */
+.socialList {
+  display: flex;
+  gap: var(--space-1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s var(--ease-out);
+}
+
+.socialLink:hover {
+  color: var(--cyan);
+  border-color: var(--border-strong);
+  background: var(--surface-hover);
+  transform: translateY(-2px);
+}

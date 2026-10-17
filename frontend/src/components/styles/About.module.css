@@ -1,164 +1,137 @@
-.aboutSection {
-  width: 100%;
-  background-color: #000000;
-  color: #ffffff;
-  padding: 5rem 2rem;
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.story {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: var(--space-3);
+  color: var(--text-muted);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  max-width: 680px;
+}
+
+.lead {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+
+.education {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.educationTitle {
+  display: flex;
   align-items: center;
-  text-align: left;
+  gap: 10px;
+  margin-bottom: var(--space-3);
+  font-size: 1.125rem;
+  font-weight: 600;
 }
 
-.aboutContent {
-  max-width: 900px;
-  width: 100%;
-  background-color: #1c1c1c;
-  padding: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  margin-bottom: 2rem;
+.educationTitle svg {
+  color: var(--cyan);
+  font-size: 1.25rem;
 }
 
-.aboutTitle {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  color: #ffffff;
-  text-align: center;
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.aboutText {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #e0e0e0;
-}
-
-.additionalInfo {
-  display: flex;
-  justify-content: space-between;
-  max-width: 900px;
-  width: 100%;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.infoBox {
-  background-color: #1c1c1c;
-  padding: 2rem;
-  border-radius: 12px;
-  flex: 1;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.infoTitle {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.infoList {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-}
-
-.infoList li {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 0.5rem;
-}
-
-.skillsSection {
-  max-width: 900px;
-  width: 100%;
-  background-color: #1c1c1c;
-  padding: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
-
-.skillsTitle {
-  font-size: 2.2rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.skillsSlider {
+.timelineItem {
   position: relative;
-  width: 100%;
-  overflow: hidden;
+  padding: 0 0 var(--space-3) var(--space-3);
+  border-left: 1px solid var(--border-strong);
 }
 
-.skillsSlide {
-  display: flex;
-  animation: scroll 20s linear infinite;
+.timelineItem:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
 }
 
-.skillItem {
-  flex: 0 0 auto;
-  margin: 0 1.5rem;
-  text-align: center;
+/* Diamond node, a nod to the monogram's angular geometry */
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  background: var(--gradient-a);
+  transform: rotate(45deg);
 }
 
-.skillIcon {
-  font-size: 4rem;
-  color: #ffffff;
+.timelineItem:last-child::before {
+  background: var(--gradient-s);
 }
 
-.skillName {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  color: #e0e0e0;
+.status {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyan);
 }
 
-.link {
-  color:lightblue
+.course {
+  margin-top: 4px;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  color: var(--text);
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
+.institution {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  text-underline-offset: 4px;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
+}
+
+.institution:hover {
+  color: var(--text);
+  text-decoration-color: var(--cyan);
+}
+
+.institution svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
   }
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .aboutSection {
-    padding: 4rem 1.5rem;
+@media (max-width: 640px) {
+  .lead {
+    font-size: 1.3125rem;
   }
-  .aboutContent, .infoBox, .skillsSection {
-    padding: 2.5rem;
-  }
-  .additionalInfo {
-    flex-direction: column;
-  }
-  .aboutTitle, .infoTitle, .skillsTitle {
-    font-size: 2rem;
-  }
-  .aboutText, .infoList li, .skillName {
-    font-size: 1rem;
-  }
-}
 
-@media (max-width: 480px) {
-  .aboutSection {
-    padding: 3rem 1rem;
-  }
-  .aboutContent, .infoBox, .skillsSection {
-    padding: 2rem;
-  }
-  .aboutTitle, .infoTitle, .skillsTitle {
-    font-size: 1.8rem;
-  }
-  .aboutText, .infoList li, .skillName {
-    font-size: 0.9rem;
-  }
-  .skillIcon {
-    font-size: 3rem;
+  .education {
+    padding: var(--space-3);
   }
 }

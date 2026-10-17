@@ -1,9 +1,9 @@
 .header {
-  width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  z-index: 100;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  background: rgba(3, 5, 28, 0.82);
+  backdrop-filter: saturate(140%) blur(12px);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  border-bottom: 1px solid rgba(29, 40, 80, 0.7);
 }
