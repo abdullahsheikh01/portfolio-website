@@ -118,7 +118,7 @@
 /* ---------- Section heading ---------- */
 .sectionHeading {
   max-width: 720px;
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-5);
 }
 
 .eyebrow {
