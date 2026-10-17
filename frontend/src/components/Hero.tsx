@@ -22,8 +22,7 @@ const Hero = () => {
           </h1>
 
           <p className={styles.intro}>
-            I&apos;m {developer.name}, a developer who designs responsive web experiences with Next.js and TypeScript,
-            and builds autonomous, human-in-the-loop agents with Python, the OpenAI Agents SDK, and Claude Code.
+            I&apos;m {developer.name}, a full stack agentic AI developer. I ship agents that do real work, from a live AI app that helps teachers plan lessons to autonomous loops that fix failing tests on their own. My stack is Python, FastAPI, the OpenAI Agents SDK, Claude Code and Next.js.
           </p>
 
           <div className={styles.actions}>
